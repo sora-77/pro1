@@ -128,7 +128,7 @@
   display: block;
   width: 3rem;
   height: 0.3rem;
-  background-color: var(--color-grey);
+  background-color: var(--color-grey-light);
   transform: translate(1rem, 0.8rem) rotate(-45deg);
 }
 
@@ -137,7 +137,7 @@
   display: block;
   width: 6rem;
   height: 0.3rem;
-  background-color: var(--color-grey);
+  background-color: var(--color-grey-light);
   transform: translateX(1.35rem);
 }
 
@@ -194,19 +194,18 @@
 
 /***********************************BEFORE AFTER SLIDE*****************************************/
 #beforeAfter .regular {
-  width: 90rem;
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  width: 100rem;
 }
 
-#beforeAfter .slick-slide:not(:last-child) {
-  margin-right: 2rem;
+#beforeAfter .regular [class^="before"],
+#beforeAfter .regular [class^="after"] {
+  width: 17.8rem;
+  height: 24.6rem;
 }
 
 #beforeAfter .slick-arrow {
   position: absolute;
-  top: -11rem;
+  top: -8rem;
   width: 5rem;
   height: 5rem;
 

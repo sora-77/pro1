@@ -8,7 +8,7 @@ $(function(){
     $(".regular").slick({
       dots: false,
       infinite: true,
-      slidesToShow: 4,
+      slidesToShow: 5,
       slidesToScroll: 2
 
     });

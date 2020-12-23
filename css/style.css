@@ -533,33 +533,35 @@
   display: flex;
 }
 
+.event__list a:nth-child(1) {
+  display: block;
+  flex: 0 0 33.5%;
+}
+
+.event__list a:nth-child(2) {
+  display: block;
+  flex: 1;
+}
+
 .event__list figure {
   overflow: hidden;
   border-radius: 0.6rem;
-  height: 31.95rem;
+
+  height: 31.9rem;
 }
 
 .event__item1 {
   background: url(../img/starclinic_event.jpg) no-repeat;
+  background-size: cover;
   background-position: center;
-  flex: 0 0 33.5%;
-  width: 41.6rem;
-  margin-right: 3.5rem;
-}
 
-.event__item1 img {
-  min-width: 27.6rem;
+  margin-right: 3.5rem;
 }
 
 .event__item2 {
   background: url(../img/starclinic_event2.jpg) no-repeat;
+  background-size: cover;
   background-position: center;
-  width: 82.9rem;
-  flex: 1;
-}
-
-.event__item2 img {
-  min-width: 68.9rem;
 }
 
 /*********************BEFORE AFTER****************************/
@@ -572,10 +574,19 @@
 }
 
 .ba__titleimg {
-  flex: 0 0 40%;
-  margin-right: 3.5rem;
+  flex: 0 0 32.5%;
+  margin-right: 5.5rem;
+  overflow: hidden;
 
   position: relative;
+}
+
+.ba__titleimg img {
+  transition: transform 0.2s;
+}
+
+.ba__titleimg:hover img {
+  transform: scale(1.05);
 }
 
 .ba__titleimg p {
@@ -608,45 +619,64 @@
 
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+
+  overflow: hidden;
+  height: 49.1rem;
 }
 
 .ba__content .title-box {
-  margin-top: 7.5rem;
+  margin-top: 6rem;
+  flex-direction: column;
+  justify-content: stretch;
 }
 
-.ba__content .before1,
-.ba__content .before2,
-.ba__content .before3,
-.ba__content .after1,
-.ba__content .after2,
-.ba__content .after3 {
-  position: relative;
+.ba__content .title-box .sec__title {
+  width: 100%;
+  margin-right: 0;
+  margin-bottom: 0.5rem;
 }
 
-.ba__content .arrow1,
-.ba__content .arrow2,
-.ba__content .arrow3 {
-  z-index: 1000;
-  position: absolute;
-  bottom: 1.1rem;
-  right: -2.7rem;
-}
-
-.ba__content .arrow1 img,
-.ba__content .arrow2 img,
-.ba__content .arrow3 img {
+.ba__content .title-box .sec__subtitle {
   width: 100%;
 }
 
-.before_txt,
-.after_txt {
+.ba__content [class^="before"],
+.ba__content [class^="after"] {
+  position: relative;
+}
+
+.ba__content img {
+  margin-bottom: -2.5rem;
+}
+
+.ba__content [class^="arrow"] {
+  z-index: 1000;
+  position: absolute;
+  bottom: 3rem;
+  right: -2.2rem;
+}
+
+.ba__content [class^="arrow"] img {
+  width: 100%;
+}
+
+[class$="txt"] {
   font-size: 2rem;
   font-weight: 700;
 
+  display: inline-block;
   position: absolute;
   bottom: 1rem;
-  left: 8.9rem;
-  transform: translateX(-50%);
+  left: 44.5%;
+}
+
+.ba__content .before_txt {
+  transform: translateX(-20%);
+}
+
+.ba__content .after_txt {
+  transform: translateX(-17%);
 }
 
 /*********************VIDEO****************************/
@@ -739,6 +769,20 @@
 
 #news {
   margin-bottom: 11rem;
+}
+
+#news .content {
+  overflow: hidden;
+  width: calc((100% - 1rem) / 3);
+}
+
+#news img {
+  width: 100%;
+  transition: transform 0.2s;
+}
+
+#news img:hover {
+  transform: scale(1.05);
 }
 
 #news .news__contents-box {
