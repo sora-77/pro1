@@ -96,6 +96,8 @@ button {
   top: 20%;
   right: 4rem;
   z-index: 1000;
+
+  display: none;
 }
 
 #quickmenu .quickmenu__item {
@@ -181,7 +183,7 @@ button {
 #quickmenu .btn-top a {
   position: relative;
 
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   text-transform: uppercase;
   font-weight: 700;
   color: #fff;
@@ -193,7 +195,7 @@ button {
   display: inline-block;
   font-size: 3.5rem;
   position: absolute;
-  top: -0.6rem;
+  top: -0.8rem;
   margin-left: 0.1rem;
 }
 
@@ -221,6 +223,7 @@ button {
   align-items: center;
 
   position: relative;
+  height: 7.5rem;
 }
 
 #nav4 .depth1 {
@@ -264,7 +267,7 @@ button {
 #nav4 .nav_box {
   width: 100%;
   position: absolute;
-  top: 75px;
+  top: 73px;
   left: 0;
   background-color: rgba(0, 0, 0, 0.6);
   color: #fff;
@@ -311,10 +314,15 @@ button {
   transform: translateY(-50%);
 }
 
+#nav4 .depth2 > li:hover a {
+  color: var(--color-accent);
+}
+
 /* HEADER */
 
 #header {
   height: 7.5rem;
+  margin: -2px;
 }
 
 #header #logo {

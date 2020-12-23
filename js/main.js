@@ -9,10 +9,19 @@ $(function(){
      //   $(".sitemap__close").slideDown("slow");
      //   $(".sitemap__background").animate({width: "300rem", height: "300rem", top: "-50%", right: "-50%"}).css({opacity: 1}, "slow");
     //})
+    // 사이트맵 
+    $(".icon-menu-box").click(function(){
+        $("#sitemap").css({opacity: 1});
+        $("#sitemap").animate({width: "100%"});
+        $(".sitemap__close").fadeIn("slow");
+    })
+
+
     // 사이트맵 닫기버튼
     $(".sitemap__close").click(function(){
         $(this).fadeOut("slow");
-        $(".sitemap__background").animate({width: "0", height: "0", top: "13.5rem", right: "16.5rem"});
+        $("#sitemap").animate({width: "0"});
+        
     })
 // 공지사항 팝업
     var slide;

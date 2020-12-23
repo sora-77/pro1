@@ -82,7 +82,7 @@
 }
 
 .icon-box:hover {
-  background-color: var(--color-primary);
+  background-color: var(--color-accent);
 }
 
 .top_icon-item {
@@ -141,21 +141,23 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 0;
   height: 100%;
   background-color: var(--color-primary-light);
+  display: flex;
+  align-items: center;
 
   transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
-  z-index: 3000;
+  z-index: 2000;
 
-  opacity: 1;
-  /*visibility: hidden;*/
+  opacity: 0;
+  overflow: hidden;
 }
-
+/*
 #sitemap:target {
   opacity: 1;
   visibility: visible;
-}
+}*/
 
 #sitemap .sitemap__close {
 }
@@ -169,8 +171,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: var(--color-darkgrey);
 
-  width: 102.4rem;
+  width: 80rem;
   margin: 0 auto;
 }
 
@@ -184,24 +187,84 @@
 }
 
 #sitemap .sitemap__list-title {
-  font-size: 4rem;
-  font-weight: 900;
-  line-height: 3em;
+  font-size: 3.8rem;
+  font-weight: 700;
+  line-height: 2.2em;
+  padding: 0 2rem;
 
   margin-right: auto;
+  transition: background-position 0.8s;
+}
+
+#sitemap .sitemap__list:hover .sitemap__list-title {
+  background-image: linear-gradient(
+    120deg,
+    #abb2c4 0%,
+    #abb2c4 50%,
+    var(--color-darkgrey) 50%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  background-size: 230%;
+  background-position: 100%;
 }
 
 #sitemap .sitemap__list-subtitle {
   display: flex;
   flex-direction: row;
-  flex: 0 0 70%;
+  flex: 0 0 55%;
 
-  font-size: 2.2rem;
+  font-size: 1.5rem;
   font-weight: 300;
 }
 
+#sitemap .sitemap__list-subtitle li {
+  border-bottom: 2px solid transparent;
+  padding: 0.5rem 0;
+
+  position: relative;
+  backface-visibility: hidden;
+  transition: all 0.2s;
+}
+
+#sitemap .sitemap__list-subtitle li:hover {
+  box-shadow: 0 0.3rem 3rem rgba(0, 0, 0, 0.3);
+  transform: skew(12deg);
+}
+/*
+#sitemap .sitemap__list-subtitle li::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-darkgrey);
+  position: absolute;
+  bottom: 0;
+  transform: scale(0);
+  transition: all 0.2s;
+}
+
+#sitemap .sitemap__list-subtitle li:hover::before {
+  transform: scale(1);
+}*/
+
 #sitemap .sitemap__list-subtitle li:not(:last-child) {
-  margin-right: 1rem;
+  margin-right: 1.5rem;
+}
+
+#sitemap .sitemap__list-subtitle li:not(:last-child)::after {
+  content: "";
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: currentColor;
+  position: absolute;
+  top: 50%;
+  right: -1rem;
 }
 
 /*********************SITEMAP BUTTON****************************/
@@ -212,7 +275,7 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
-  z-index: 2000;
+  z-index: 3000;
 
   display: none;
 }
@@ -247,11 +310,11 @@
 
 #rolling-banner .notice,
 #rolling-banner .purp {
-  width: calc((100% - 20px) / 2);
+  width: calc((100% - 8rem) / 2);
   height: 10rem;
   background-color: var(--color-primary-light);
   position: absolute;
-  bottom: 0;
+  bottom: 0.2rem;
 }
 
 #rolling-banner .notice,
@@ -299,7 +362,7 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
-  z-index: 2000;
+  z-index: 1000;
 }
 
 #rolling-banner .notice .close::before,
@@ -410,15 +473,15 @@
   width: 0;
   height: 0;
   position: absolute;
-  top: 0px;
-  left: 0;
+  top: -1px;
+  left: 1px;
   border: 4px solid transparent;
   border-bottom: none;
   border-left: none;
 }
 
 .clinic__item:hover .clinic__link::before {
-  width: calc(100% - 3px);
+  width: calc(100% - 4px);
   height: calc(100% - 3px);
   /*처음에 라인 바깥으로 튀어나가 있음 >> border와 박스 사이즈가 합쳐졌기 때문이다*/
 
@@ -432,8 +495,8 @@
   width: 0;
   height: 0;
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: -1px;
+  right: 1px;
   border: 4px solid transparent;
   border-top: none;
   border-right: none;
@@ -441,7 +504,7 @@
 
 .clinic__item:hover .clinic__link::after {
   width: calc(100% - 4px);
-  height: calc(100% - 4px);
+  height: calc(100% - 3px);
   /*처음에 라인 바깥으로 튀어나가 있음 >> border와 박스 사이즈가 합쳐졌기 때문이다*/
   border-color: var(--color-primary);
   transition: width 0.4s, height 0.4s 0.4s;
@@ -470,6 +533,7 @@
 
 .event__item1 img {
   min-width: 27.6rem;
+  overflow: hidden;
 }
 
 .event__item2 {
@@ -495,6 +559,31 @@
 .ba__titleimg {
   flex: 0 0 40%;
   margin-right: 3.5rem;
+
+  position: relative;
+}
+
+.ba__titleimg p {
+  position: absolute;
+  bottom: 4rem;
+  left: 2rem;
+  z-index: 10;
+
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 1.6em;
+}
+
+.ba__titleimg p .ba-btn {
+  background-color: var(--color-primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 0.8rem 3rem;
+  color: #fff;
+
+  display: block;
+  margin-top: 2rem;
 }
 
 .ba__content {

@@ -77,7 +77,6 @@
 }
 .slick-slide img {
   display: block;
- 
 }
 .slick-slide.slick-loading img {
   display: none;
@@ -115,15 +114,52 @@
 #section1 .slick-arrow {
   position: absolute;
   top: 50%;
+
+  color: transparent;
 }
 
 #section1 .slick-prev {
   left: 100px;
+  z-index: 1000;
+}
 
+#section1 .slick-prev::before {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 0.3rem;
+  background-color: var(--color-grey);
+  transform: translate(1rem, 0.8rem) rotate(-45deg);
+}
+
+#section1 .slick-prev::after {
+  content: "";
+  display: block;
+  width: 6rem;
+  height: 0.3rem;
+  background-color: var(--color-grey);
+  transform: translateX(1.35rem);
 }
 
 #section1 .slick-next {
   right: 100px;
+}
+
+#section1 .slick-next::before {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 0.3rem;
+  background-color: var(--color-grey-light);
+  transform: translate(3.35rem, 0.8rem) rotate(45deg);
+}
+
+#section1 .slick-next::after {
+  content: "";
+  display: block;
+  width: 6rem;
+  height: 0.3rem;
+  background-color: var(--color-grey-light);
 }
 
 #section1 .slick-dots {
@@ -173,15 +209,14 @@
   top: -11rem;
   width: 5rem;
   height: 5rem;
-  
+
   text-indent: -9999999px;
 }
 
 #beforeAfter .slick-prev {
   background: url(../img/beforeAfter_arrow-left.png);
-  
-  left: 0;
 
+  left: 0;
 }
 
 #beforeAfter .slick-next {
